@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const db = require('./config/keys').mongoURI;
 const PORT = process.env.PORT || 5000;
+const cors = require('cors');
 
 const maleProducts = require('./routes/api/male-products');
 
@@ -11,6 +12,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+app.use(cors());
+
 mongoose
   .connect(db, {
     useNewUrlParser: true
