@@ -25,10 +25,7 @@ router.get('/:id', (req, res) => {
 // @access Public 
 
 router.get('/shirts', (req, res) => {
-  MaleProduct.find({
-      productType: "shirt",
-      productGroup: "clothes"
-    })
+  MaleProduct.find()
     .then(products => res.json(products))
 });
 
