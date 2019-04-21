@@ -20,6 +20,30 @@ router.get('/:id', (req, res) => {
     .then(products => res.json(products))
 });
 
+// @route GET api/male/products/shirts
+// @desc get shirts products
+// @access Public 
+
+router.get('/shirts', (req, res) => {
+  MaleProduct.find({
+      productType: "shirt",
+      productGroup: "clothes"
+    })
+    .then(products => res.json(products))
+});
+
+// @route GET api/male/products/jeans
+// @desc get jeans products
+// @access Public
+
+router.get('/jeans', (req, res) => {
+  MaleProduct.find({
+      productType: "jeans",
+      productGroup: "clothes"
+    })
+    .then(products => res.json(products))
+});
+
 // @route POST api/male/products
 // @desc set product in database
 // @access Public 
