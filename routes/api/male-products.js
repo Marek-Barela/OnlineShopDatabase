@@ -11,21 +11,15 @@ router.get('/', (req, res) => {
     .then(products => res.json(products))
 });
 
-// @route GET api/male/products/:id
-// @desc get single product
-// @access Public 
-
-router.get('/:id', (req, res) => {
-  MaleProduct.findById(req.params.id)
-    .then(products => res.json(products))
-});
-
 // @route GET api/male/products/shirts
 // @desc get shirts products
 // @access Public 
 
 router.get('/shirts', (req, res) => {
-  MaleProduct.find()
+  MaleProduct.find({
+      productType: "shirt",
+      productGroup: "clothes"
+    })
     .then(products => res.json(products))
 });
 
@@ -38,6 +32,15 @@ router.get('/jeans', (req, res) => {
       productType: "jeans",
       productGroup: "clothes"
     })
+    .then(products => res.json(products))
+});
+
+// @route GET api/male/products/:id
+// @desc get single product
+// @access Public 
+
+router.get('/:id', (req, res) => {
+  MaleProduct.findById(req.params.id)
     .then(products => res.json(products))
 });
 
