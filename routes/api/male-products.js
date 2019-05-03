@@ -83,6 +83,42 @@ router.get('/moccasins', (req, res) => {
     .then(products => res.json(products))
 });
 
+// @route GET api/male/products/shoes
+// @desc get shoes products
+// @access Public
+
+router.get('/shoes', (req, res) => {
+  MaleProduct.find({
+      productType: "shoes",
+      productGroup: "boots"
+    })
+    .then(products => res.json(products))
+});
+
+// @route GET api/male/products/tracksuit
+// @desc get tracksuit products
+// @access Public
+
+router.get('/tracksuit', (req, res) => {
+  MaleProduct.find({
+      productType: "tracksuit",
+      productGroup: "sport"
+    })
+    .then(products => res.json(products))
+});
+
+// @route GET api/male/products/tshirt
+// @desc get tshirt products
+// @access Public
+
+router.get('/tshirt', (req, res) => {
+  MaleProduct.find({
+      productType: "tshirt",
+      productGroup: "sport"
+    })
+    .then(products => res.json(products))
+});
+
 // @route GET api/male/products/:id
 // @desc get single product
 // @access Public 
