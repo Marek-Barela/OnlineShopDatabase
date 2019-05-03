@@ -47,6 +47,30 @@ router.get('/jacket', (req, res) => {
     .then(products => res.json(products))
 });
 
+// @route GET api/male/products/trousers
+// @desc get trousers products
+// @access Public
+
+router.get('/trousers', (req, res) => {
+  MaleProduct.find({
+      productType: "trousers",
+      productGroup: "clothes"
+    })
+    .then(products => res.json(products))
+});
+
+// @route GET api/male/products/trousers
+// @desc get trousers products
+// @access Public
+
+router.get('/trousers', (req, res) => {
+  MaleProduct.find({
+      productType: "trousers",
+      productGroup: "clothes"
+    })
+    .then(products => res.json(products))
+});
+
 // @route GET api/male/products/:id
 // @desc get single product
 // @access Public 
