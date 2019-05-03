@@ -71,6 +71,18 @@ router.get('/elasticsides', (req, res) => {
     .then(products => res.json(products))
 });
 
+// @route GET api/male/products/moccasins
+// @desc get moccasins products
+// @access Public
+
+router.get('/moccasins', (req, res) => {
+  MaleProduct.find({
+      productType: "moccasins",
+      productGroup: "boots"
+    })
+    .then(products => res.json(products))
+});
+
 // @route GET api/male/products/:id
 // @desc get single product
 // @access Public 
