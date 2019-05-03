@@ -59,14 +59,14 @@ router.get('/trousers', (req, res) => {
     .then(products => res.json(products))
 });
 
-// @route GET api/male/products/trousers
-// @desc get trousers products
+// @route GET api/male/products/elasticsides
+// @desc get elasticsides products
 // @access Public
 
-router.get('/trousers', (req, res) => {
+router.get('/elasticsides', (req, res) => {
   MaleProduct.find({
-      productType: "trousers",
-      productGroup: "clothes"
+      productType: "elasticsides",
+      productGroup: "boots"
     })
     .then(products => res.json(products))
 });
