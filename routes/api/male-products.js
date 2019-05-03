@@ -119,6 +119,54 @@ router.get('/tshirt', (req, res) => {
     .then(products => res.json(products))
 });
 
+// @route GET api/male/products/backpack
+// @desc get backpack products
+// @access Public
+
+router.get('/backpack', (req, res) => {
+  MaleProduct.find({
+      productType: "backpack",
+      productGroup: "accesories"
+    })
+    .then(products => res.json(products))
+});
+
+// @route GET api/male/products/bags
+// @desc get bags products
+// @access Public
+
+router.get('/bags', (req, res) => {
+  MaleProduct.find({
+      productType: "bags",
+      productGroup: "accesories"
+    })
+    .then(products => res.json(products))
+});
+
+// @route GET api/male/products/watch
+// @desc get watch products
+// @access Public
+
+router.get('/watch', (req, res) => {
+  MaleProduct.find({
+      productType: "watch",
+      productGroup: "accesories"
+    })
+    .then(products => res.json(products))
+});
+
+// @route GET api/male/products/jewelry
+// @desc get jewelry products
+// @access Public
+
+router.get('/jewelry', (req, res) => {
+  MaleProduct.find({
+      productType: "jewelry",
+      productGroup: "accesories"
+    })
+    .then(products => res.json(products))
+});
+
 // @route GET api/male/products/:id
 // @desc get single product
 // @access Public 
