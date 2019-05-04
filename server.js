@@ -6,6 +6,7 @@ const db = require('./config/keys').mongoURI;
 const PORT = process.env.PORT || 5000;
 const cors = require('cors');
 
+const femaleProducts = require('./routes/api/female-products');
 const maleProducts = require('./routes/api/male-products');
 
 app.use(bodyParser.json());
@@ -21,6 +22,7 @@ mongoose
   .then(() => console.log("MongoDB Connected..."))
   .catch((err) => console.log("MongoDB error", err));
 
+app.use('/api/female/products', femaleProducts);
 app.use('/api/male/products', maleProducts);
 
 app.listen(PORT, err => {
